@@ -1,4 +1,5 @@
 package DAO;
+
 import entidades.ClientesPotenciale;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -6,12 +7,9 @@ import org.apache.logging.log4j.Logger;
 import javax.persistence.*;
 import java.util.List;
 
-public class ClientesPotenciales {
+public class ClientesPotencialesDao {
     static Logger log = LogManager.getRootLogger();
     static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("serpis_PU");
-
-
-
 
 
     //METODO PARA LISTAR TODOS LOS Clientes potenciales
@@ -37,7 +35,8 @@ public class ClientesPotenciales {
         em.close();
 
 
-}
+    }
+
     //METODO DE PRUEBA PARA ENCONTRAR POR nombre (HAY QUE PASAR PARAMETRO STRING)
     public List<String> econtrarpornombre(String nombre) {
         EntityManager em = emfactory.createEntityManager();
@@ -47,28 +46,6 @@ public class ClientesPotenciales {
         em.close();
         return lista;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
