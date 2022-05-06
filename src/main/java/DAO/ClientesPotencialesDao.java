@@ -3,6 +3,7 @@ package DAO;
 import entidades.ClientesPotenciale;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import entidades.ClientesVip;
 
 import javax.persistence.*;
 import java.util.List;
@@ -46,6 +47,7 @@ public class ClientesPotencialesDao {
         em.close();
         return lista;
     }
+
 
 
 }

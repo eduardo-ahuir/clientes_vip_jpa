@@ -24,7 +24,7 @@ public class GestorDao {
 
     }
 
-    //METODO PARA INSERTAR Clientes potenciales
+    //METODO PARA INSERTAR Gestores
     public void insertar(Gestor Gestor) {
 
         EntityManager em = emfactory.createEntityManager();

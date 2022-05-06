@@ -1,0 +1,16 @@
+﻿Cuando alguien se hace cliente de una empresa x esta añade a una lista de pasibles clientes vip su nombre apellidos y correo electrónico si masa adelante ese cliente recibe el estatus de vip se crea de forma automática una cuenta vip para este y se manda un correo indicándolo esta cuenta vip tiene todos los datos de cliente potencial ademas de un numero identificador y un saldo de puntos que pueden ganar al comprar en la empresa el usuario y contraseña para la cuenta son generados de forma automática y deben cambiarse mas adelante también se les asigna un máximo de puntos mensuales que pueden ganar estos puntos se pueden usar para obtener diferentes descuentos
+
+a esta cuenta van asociadas las operaciones que realice con esos puntos y se guarda cuando y donde se gastaron
+
+
+
+
+
+				se requiere:
+que los datos de cliente potencial y vip se rellenen de manera automática al crear la cuenta vip 
+Que un cliente no pueda tener mas de una cuenta
+que una vez generados el usuario y contraseña se puedan cambiar
+comprobar que los puntos actuales nunca superan los máximos
+que el identificador de la cuenta sea único
+que las operaciones no puedan sobrepasar el numero de puntos actuales
+ademas de que se guarde la fecha cuando fueron realizadas

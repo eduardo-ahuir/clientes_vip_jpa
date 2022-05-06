@@ -4,6 +4,7 @@ import entidades.ClientesPotenciale;
 import entidades.ClientesVip;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import entidades.objeto;
 
 import javax.persistence.*;
 import java.util.List;
@@ -37,6 +38,7 @@ public class ClientesvipDao {
 
 
     }
+
 
 
     }
