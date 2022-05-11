@@ -1,12 +1,19 @@
 package entidades;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "gestor")
+@NamedQueries({
+        @NamedQuery(name = "gestor", query = "SELECT a FROM gestor a"),
+        @NamedQuery(name = "gestor.findByIdgestor", query = "SELECT a FROM gestor a WHERE a.gestorPK.idgestor = :idgestor"),
+        @NamedQuery(name = "gestor.findByNombre", query = "SELECT a FROM gestor a WHERE a.nombre = :nombre"),
+        @NamedQuery(name = "gestor.findByApellido", query = "SELECT a FROM gestor a WHERE a.apellidos = :apellido"),
+        @NamedQuery(name = "gestor.findByFmatricula", query = "SELECT a FROM gestor a , clientesvip v WHERE v.dni=a.dni and a.fmatricula = :fmatricula"),
+        @NamedQuery(name = "gestor.findañomodulo",query = "SELECT b, p FROM gestor b, Modulos p WHERE b.fmatricula =:fmatricula and p.nombre=:nombre   "),
+        @NamedQuery(name = "gestor.findByCicloFormativoId", query = "SELECT a FROM gestor a WHERE a.gestorPK.cicloFormativoId = :cicloFormativoId" )})
+
+
 public class Gestor {
     @Id
     @Column(name = "idGestores", nullable = false)

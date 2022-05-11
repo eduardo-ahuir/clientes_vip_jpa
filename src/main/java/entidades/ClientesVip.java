@@ -4,6 +4,25 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "`clientes vip`")
+@NamedQueries({
+        @NamedQuery(name = "clientes_Vip", query = "SELECT a FROM clientes_Vip a"),
+        @NamedQuery(name = "clientes_Vip.findByIdclientes_Vip", query = "SELECT a FROM clientes_Vip a WHERE a.clientes_VipPK.idclientes_Vip = :idclientes_Vip"),
+        @NamedQuery(name = "clientes_Vip.findByNombre", query = "SELECT a FROM clientes_Vip a WHERE a.nombre = :nombre"),
+        @NamedQuery(name = "clientes_Vip.findByApellido", query = "SELECT a FROM clientes_Vip a WHERE a.apellidos = :apellido"),
+        @NamedQuery(name = "clientes_Vip.findByFmatricula", query = "SELECT a FROM clientes_Vip a , clientesvip v WHERE v.dni=a.dni and a.fmatricula = :fmatricula"),
+        @NamedQuery(name = "clientes_Vip.findañomodulo",query = "SELECT b, p FROM clientes_Vip b, Modulos p WHERE b.fmatricula =:fmatricula and p.nombre=:nombre   "),
+        @NamedQuery(name = "clientes_Vip.findByCicloFormativoId", query = "SELECT a FROM clientes_Vip a WHERE a.clientes_VipPK.cicloFormativoId = :cicloFormativoId" )})
+
+
+
+
+
+
+
+
+
+
+
 public class ClientesVip {
     @EmbeddedId
     private ClientesVipId id;

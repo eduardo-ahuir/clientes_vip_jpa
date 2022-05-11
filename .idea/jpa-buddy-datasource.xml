@@ -8,6 +8,8 @@
     <data-source-infos>
       <data-source-info id="e8c645c1-0e87-45fc-99f6-b768db7630ee" persistence-unit-name="clase" />
       <data-source-info id="e8c645c1-0e87-45fc-99f6-b768db7630ee" persistence-unit-name="Default" />
+      <data-source-info id="e8c645c1-0e87-45fc-99f6-b768db7630ee" persistence-unit-name="serpispu" />
+      <data-source-info id="e8c645c1-0e87-45fc-99f6-b768db7630ee" persistence-unit-name="serpis_PU" />
     </data-source-infos>
   </component>
 </project>
