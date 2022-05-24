@@ -2,14 +2,14 @@
 <project version="4">
   <component name="JpbDataSourceConfig">
     <data-sources>
-      <data-source id="8d9926c3-04d0-44f6-a716-9981be8261c0" name="Jpa" url="jdbc:mysql://localhost/127.0.?useSSL=false&amp;allowMultiQueries=true&amp;serverTimezone=UTC" driverClass="com.mysql.cj.jdbc.Driver" />
-      <data-source id="e8c645c1-0e87-45fc-99f6-b768db7630ee" name="Jpadb" url="jdbc:mysql://localhost/clientes_vip?useSSL=false&amp;allowMultiQueries=true&amp;serverTimezone=UTC" driverClass="com.mysql.cj.jdbc.Driver" />
+      <data-source id="8d9926c3-04d0-44f6-a716-9981be8261c0" name="Jpa" url="jdbc:mysql://localhost/clientes_vip?useSSL=false&amp;allowMultiQueries=true&amp;serverTimezone=UTC" driverClass="com.mysql.cj.jdbc.Driver" />
     </data-sources>
     <data-source-infos>
       <data-source-info id="e8c645c1-0e87-45fc-99f6-b768db7630ee" persistence-unit-name="clase" />
       <data-source-info id="e8c645c1-0e87-45fc-99f6-b768db7630ee" persistence-unit-name="Default" />
       <data-source-info id="e8c645c1-0e87-45fc-99f6-b768db7630ee" persistence-unit-name="serpispu" />
       <data-source-info id="e8c645c1-0e87-45fc-99f6-b768db7630ee" persistence-unit-name="serpis_PU" />
+      <data-source-info id="8d9926c3-04d0-44f6-a716-9981be8261c0" persistence-unit-name="clientes_vip" />
     </data-source-infos>
   </component>
 </project>

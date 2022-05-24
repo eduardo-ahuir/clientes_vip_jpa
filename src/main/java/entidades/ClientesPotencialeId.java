@@ -6,22 +6,14 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Embeddable
-public class RelacionClienteGestorId implements Serializable {
-    private static final long serialVersionUID = 7561780651515086548L;
+public class ClientesPotencialeId implements Serializable {
+    private static final long serialVersionUID = 870581716243831360L;
+    @Column(name = "`idClientes potenciales`", nullable = false)
+    private Integer idClientesPotenciales;
     @Column(name = "`clientes vip_idclientes vip`", nullable = false)
     private Integer clientesVipIdclientesVip;
     @Column(name = "`clientes vip_Operaciones_idOperaciones`", nullable = false)
     private Integer clientesVipOperacionesIdoperaciones;
-    @Column(name = "Gestores_idGestores", nullable = false)
-    private Integer gestoresIdgestores;
-
-    public Integer getGestoresIdgestores() {
-        return gestoresIdgestores;
-    }
-
-    public void setGestoresIdgestores(Integer gestoresIdgestores) {
-        this.gestoresIdgestores = gestoresIdgestores;
-    }
 
     public Integer getClientesVipOperacionesIdoperaciones() {
         return clientesVipOperacionesIdoperaciones;
@@ -39,18 +31,26 @@ public class RelacionClienteGestorId implements Serializable {
         this.clientesVipIdclientesVip = clientesVipIdclientesVip;
     }
 
+    public Integer getIdClientesPotenciales() {
+        return idClientesPotenciales;
+    }
+
+    public void setIdClientesPotenciales(Integer idClientesPotenciales) {
+        this.idClientesPotenciales = idClientesPotenciales;
+    }
+
     @Override
     public int hashCode() {
-        return Objects.hash(clientesVipOperacionesIdoperaciones, clientesVipIdclientesVip, gestoresIdgestores);
+        return Objects.hash(clientesVipOperacionesIdoperaciones, clientesVipIdclientesVip, idClientesPotenciales);
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        RelacionClienteGestorId entity = (RelacionClienteGestorId) o;
+        ClientesPotencialeId entity = (ClientesPotencialeId) o;
         return Objects.equals(this.clientesVipOperacionesIdoperaciones, entity.clientesVipOperacionesIdoperaciones) &&
                 Objects.equals(this.clientesVipIdclientesVip, entity.clientesVipIdclientesVip) &&
-                Objects.equals(this.gestoresIdgestores, entity.gestoresIdgestores);
+                Objects.equals(this.idClientesPotenciales, entity.idClientesPotenciales);
     }
 }

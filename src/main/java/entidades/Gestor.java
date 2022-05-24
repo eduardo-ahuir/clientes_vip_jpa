@@ -1,19 +1,12 @@
 package entidades;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity
 @Table(name = "gestor")
-@NamedQueries({
-        @NamedQuery(name = "gestor", query = "SELECT a FROM gestor a"),
-        @NamedQuery(name = "gestor.findByIdgestor", query = "SELECT a FROM gestor a WHERE a.gestorPK.idgestor = :idgestor"),
-        @NamedQuery(name = "gestor.findByNombre", query = "SELECT a FROM gestor a WHERE a.nombre = :nombre"),
-        @NamedQuery(name = "gestor.findByApellido", query = "SELECT a FROM gestor a WHERE a.apellidos = :apellido"),
-        @NamedQuery(name = "gestor.findByFmatricula", query = "SELECT a FROM gestor a , clientesvip v WHERE v.dni=a.dni and a.fmatricula = :fmatricula"),
-        @NamedQuery(name = "gestor.findañomodulo",query = "SELECT b, p FROM gestor b, Modulos p WHERE b.fmatricula =:fmatricula and p.nombre=:nombre   "),
-        @NamedQuery(name = "gestor.findByCicloFormativoId", query = "SELECT a FROM gestor a WHERE a.gestorPK.cicloFormativoId = :cicloFormativoId" )})
-
-
+@Entity
 public class Gestor {
     @Id
     @Column(name = "idGestores", nullable = false)
@@ -31,28 +24,12 @@ public class Gestor {
     @Column(name = "`Años en la empresa`", nullable = false, length = 45)
     private String aOsEnLaEmpresa;
 
-    public Integer getId() {
-        return id;
+    public String getAOsEnLaEmpresa() {
+        return aOsEnLaEmpresa;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellidos() {
-        return apellidos;
-    }
-
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+    public void setAOsEnLaEmpresa(String aOsEnLaEmpresa) {
+        this.aOsEnLaEmpresa = aOsEnLaEmpresa;
     }
 
     public String getCorreocontacto() {
@@ -63,12 +40,27 @@ public class Gestor {
         this.correocontacto = correocontacto;
     }
 
-    public String getAOsEnLaEmpresa() {
-        return aOsEnLaEmpresa;
+    public String getApellidos() {
+        return apellidos;
     }
 
-    public void setAOsEnLaEmpresa(String aOsEnLaEmpresa) {
-        this.aOsEnLaEmpresa = aOsEnLaEmpresa;
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 }

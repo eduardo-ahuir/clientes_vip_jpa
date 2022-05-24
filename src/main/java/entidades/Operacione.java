@@ -5,8 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
 @Table(name = "operaciones")
+@Entity
 public class Operacione {
     @Id
     @Column(name = "idOperaciones", nullable = false)
@@ -21,20 +21,12 @@ public class Operacione {
     @Column(name = "OPcliente", nullable = false, length = 45)
     private String oPcliente;
 
-    public Integer getId() {
-        return id;
+    public String getOPcliente() {
+        return oPcliente;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
+    public void setOPcliente(String oPcliente) {
+        this.oPcliente = oPcliente;
     }
 
     public String getCantidadPuntosGastados() {
@@ -45,12 +37,19 @@ public class Operacione {
         this.cantidadPuntosGastados = cantidadPuntosGastados;
     }
 
-    public String getOPcliente() {
-        return oPcliente;
+    public String getFecha() {
+        return fecha;
     }
 
-    public void setOPcliente(String oPcliente) {
-        this.oPcliente = oPcliente;
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 }

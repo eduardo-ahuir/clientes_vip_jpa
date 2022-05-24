@@ -7,12 +7,19 @@ import java.util.Objects;
 
 @Embeddable
 public class ClientesVipId implements Serializable {
-    private static final long serialVersionUID = 5676665271125774547L;
+    private static final long serialVersionUID = 6268701043805343724L;
     @Column(name = "`idclientes vip`", nullable = false)
     private Integer idclientesVip;
-
     @Column(name = "Operaciones_idOperaciones", nullable = false)
     private Integer operacionesIdoperaciones;
+
+    public Integer getOperacionesIdoperaciones() {
+        return operacionesIdoperaciones;
+    }
+
+    public void setOperacionesIdoperaciones(Integer operacionesIdoperaciones) {
+        this.operacionesIdoperaciones = operacionesIdoperaciones;
+    }
 
     public Integer getIdclientesVip() {
         return idclientesVip;
@@ -22,12 +29,9 @@ public class ClientesVipId implements Serializable {
         this.idclientesVip = idclientesVip;
     }
 
-    public Integer getOperacionesIdoperaciones() {
-        return operacionesIdoperaciones;
-    }
-
-    public void setOperacionesIdoperaciones(Integer operacionesIdoperaciones) {
-        this.operacionesIdoperaciones = operacionesIdoperaciones;
+    @Override
+    public int hashCode() {
+        return Objects.hash(idclientesVip, operacionesIdoperaciones);
     }
 
     @Override
@@ -38,10 +42,4 @@ public class ClientesVipId implements Serializable {
         return Objects.equals(this.idclientesVip, entity.idclientesVip) &&
                 Objects.equals(this.operacionesIdoperaciones, entity.operacionesIdoperaciones);
     }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(idclientesVip, operacionesIdoperaciones);
-    }
-
 }

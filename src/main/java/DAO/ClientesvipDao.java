@@ -1,12 +1,11 @@
 package DAO;
 
-import entidades.ClientesPotenciale;
-import entidades.ClientesVip;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.persistence.*;
 import java.util.List;
+import entidades.ClientesVip;
 
 public class ClientesvipDao {
     static Logger log = LogManager.getRootLogger();
@@ -16,7 +15,7 @@ public class ClientesvipDao {
     //METODO PARA LISTAR TODOS LOS Clientes potenciales
     public List<ClientesVip> seleccionar() {
         EntityManager em = emfactory.createEntityManager();
-        Query query1 = em.createNamedQuery("Alumno.findAll", ClientesPotenciale.class);
+        Query query1 = em.createNamedQuery("Alumno.findAll", ClientesVip.class);
         List<ClientesVip> lista = (List<ClientesVip>) query1.getResultList();
         em.close();
         return lista;

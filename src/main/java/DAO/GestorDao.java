@@ -1,13 +1,11 @@
 package DAO;
 
-import entidades.ClientesPotenciale;
-import entidades.ClientesVip;
-import entidades.Gestor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.persistence.*;
 import java.util.List;
+import entidades.Gestor;
 
 public class GestorDao {
     static Logger log = LogManager.getRootLogger();

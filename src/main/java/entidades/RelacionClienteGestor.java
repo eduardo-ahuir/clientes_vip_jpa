@@ -1,25 +1,18 @@
 package entidades;
 
-import javax.persistence.*;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.Index;
+import javax.persistence.Table;
 
+@Table(name = "`relacion cliente gestor`", indexes = {
+        @Index(name = "fk_clientes vip_has_Gestores_clientes vip1_idx", columnList = "clientes vip_idclientes vip, clientes vip_Operaciones_idOperaciones"),
+        @Index(name = "fk_clientes vip_has_Gestores_Gestores1_idx", columnList = "Gestores_idGestores")
+})
 @Entity
-@Table(name = "`relacion cliente gestor`")
 public class RelacionClienteGestor {
     @EmbeddedId
     private RelacionClienteGestorId id;
-
-    @MapsId
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumns({
-            @JoinColumn(name = "clientes vip_idclientes vip", referencedColumnName = "idclientes vip", nullable = false),
-            @JoinColumn(name = "clientes vip_Operaciones_idOperaciones", referencedColumnName = "Operaciones_idOperaciones", nullable = false)
-    })
-    private ClientesVip clientesVip;
-
-    @MapsId("gestoresIdgestores")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "Gestores_idGestores", nullable = false)
-    private Gestor gestoresIdgestores;
 
     public RelacionClienteGestorId getId() {
         return id;
@@ -28,21 +21,4 @@ public class RelacionClienteGestor {
     public void setId(RelacionClienteGestorId id) {
         this.id = id;
     }
-
-    public ClientesVip getClientesVip() {
-        return clientesVip;
-    }
-
-    public void setClientesVip(ClientesVip clientesVip) {
-        this.clientesVip = clientesVip;
-    }
-
-    public Gestor getGestoresIdgestores() {
-        return gestoresIdgestores;
-    }
-
-    public void setGestoresIdgestores(Gestor gestoresIdgestores) {
-        this.gestoresIdgestores = gestoresIdgestores;
-    }
-
 }
