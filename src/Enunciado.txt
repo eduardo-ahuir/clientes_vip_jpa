@@ -14,3 +14,11 @@ comprobar que los puntos actuales nunca superan los máximos
 que el identificador de la cuenta sea único
 que las operaciones no puedan sobrepasar el numero de puntos actuales
 ademas de que se guarde la fecha cuando fueron realizadas
+
+querys
+correo electronico de todos los clientes potenciales que no se han convertido en clientes
+saldo de la cuenta de un cliente concreto
+nombre de todos los clientes con mas de x puntos
+todos los clientes con un apellidos cocncreto
+
+
