@@ -7,7 +7,7 @@ import javax.persistence.*;
 })
 @Entity
 @NamedQueries({
-@NamedQuery(name = "clientes potenciale", query = "SELECT a FROM clientes potenciale a"),
+@NamedQuery(name = "clientes potenciale", query = "SELECT a FROM clientes potenciales a"),
 @NamedQuery(name = "clientes potenciale.findByIdclientes potenciale", query = "SELECT a FROM clientes potenciale a WHERE a.clientes potencialePK.idclientes potenciale = :idclientes potenciale"),
 @NamedQuery(name = "clientes potenciale.findByNombre", query = "SELECT a FROM clientes potenciale a WHERE a.nombre = :nombre"),
 @NamedQuery(name = "clientes potenciale.findByApellido", query = "SELECT a FROM clientes potenciale a WHERE a.apellido = :apellido"),

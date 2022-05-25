@@ -9,7 +9,7 @@ import entidades.ClientesPotenciale;
 
 public class ClientesPotencialesDao {
     static Logger log = LogManager.getRootLogger();
-    static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("serpis_PU");
+    static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("clientes_vip");
 
 
     //METODO PARA LISTAR TODOS LOS Clientes potenciales

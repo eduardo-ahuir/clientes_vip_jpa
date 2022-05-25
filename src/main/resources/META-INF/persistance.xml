@@ -1,0 +1,16 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.2" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+    <persistence-unit name="clientes_vip" transaction-type="RESOURCE_LOCAL">
+        <class>entidades.ClientesPotenciale</class>
+        <class>entidades.ClientesVip</class>
+        <class>entidades.Gestor</class>
+        <class>entidades.Operacione</class>
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/clientes_vip?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="circulocruz"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="eclipselink.logging.level.sql" value="FINE"/>
+            <property name="eclipselink.loggin.parameters" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
