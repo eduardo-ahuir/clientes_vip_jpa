@@ -18,7 +18,9 @@ ademas de que se guarde la fecha cuando fueron realizadas
 querys
 correo electronico de todos los clientes potenciales que no se han convertido en clientes
 saldo de la cuenta de un cliente concreto
-nombre de todos los clientes con mas de x puntos
-todos los clientes con un apellidos cocncreto
+todos los clientes a carfgo de un Gestor concreto
+todas las operaciones de mas de x puntos
 
+
+Operacione.findcantidad
 

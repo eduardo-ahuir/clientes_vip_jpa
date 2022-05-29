@@ -2,10 +2,10 @@ package DAO;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import entidades.*;
 
 import javax.persistence.*;
 import java.util.List;
-import entidades.ClientesVip;
 
 public class ClientesvipDao {
     static Logger log = LogManager.getRootLogger();
@@ -36,7 +36,16 @@ public class ClientesvipDao {
 
 
     }
-
-
-
+    //METODO PARA ENCONTRAR EL SALDO DADO EL NOMBRE DE UN CLIENTE
+    public List<String> Econtrarsaldousr(String nombre) {
+        EntityManager em = emfactory.createEntityManager();
+        Query query1 = em.createNamedQuery("ClientesVip.findByNombre", ClientesVip.class);
+        query1.setParameter("nombreusr", nombre); //indicamos el parametro para econtrar ese nombre
+        List<String> lista = (List<String>) query1.getResultList();
+        em.close();
+        return lista;
     }
+
+
+
+}

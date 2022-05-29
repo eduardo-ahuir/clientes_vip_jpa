@@ -5,3 +5,13 @@
         @NamedQuery(name = "clientes potenciale.findByFmatricula", query = "SELECT a FROM clientes potenciale a , clientesvip v WHERE v.dni=a.dni and a.fmatricula = :fmatricula"),
         @NamedQuery(name = "clientes potenciale.findañomodulo",query = "SELECT b, p FROM clientes potenciale b, Modulos p WHERE b.fmatricula =:fmatricula and p.nombre=:nombre   "),
         @NamedQuery(name = "clientes potenciale.findByCicloFormativoId", query = "SELECT a FROM clientes potenciale a WHERE a.clientes potencialePK.cicloFormativoId = :cicloFormativoId" )})
+
+SELECT t1.name
+FROM table1 t1
+LEFT JOIN table2 t2 ON t2.name = t1.name
+WHERE t2.name IS NULL
+
+
+ //1.correos de todos los que no son vip
+        c.encontrarcorreo().forEach(clista->{System.out.println("\nCorreo electronico de los clientes potenciales que no se han hecho vip:\" "+clista.toString());});
+

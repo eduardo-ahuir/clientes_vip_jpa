@@ -1,11 +1,11 @@
 package entidades;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Table(name = "operaciones")
+@NamedQueries({
+        @NamedQuery(name = "Operacione.findcantidad", query = "select * from Operacione o where o.cantidadPuntosGastados>:cantidad")
+})
 @Entity
 public class Operacione {
     @Id

@@ -1,11 +1,14 @@
 package entidades;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Table(name = "gestor")
+@NamedQueries({
+        @NamedQuery(name = "Gestor.findbynombre", query = "SELECT Gestor.nombre" +
+                "FROM  Gestor g" +
+                "LEFT JOIN ClientesVip c on c.id=g.id" +
+                "WHERE c.nombre=:nombrec")
+})
 @Entity
 public class Gestor {
     @Id

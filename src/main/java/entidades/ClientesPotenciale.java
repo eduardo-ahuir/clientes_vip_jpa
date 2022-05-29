@@ -2,24 +2,17 @@ package entidades;
 
 import javax.persistence.*;
 
-@Table(name = "`clientes potenciales`", indexes = {
+@Table(name = "`clientes potenciales`", schema = "clientes_vip", indexes = {
         @Index(name = "fk_clientes potenciales_clientes vip1_idx", columnList = "clientes vip_idclientes vip, clientes vip_Operaciones_idOperaciones")
 })
-@Entity
 @NamedQueries({
-        @NamedQuery(name = "clientes potenciale", query = "SELECT a FROM clientes potenciales a"),
-        @NamedQuery(name = "clientes potenciale.findByIdclientes potenciale", query = "SELECT a FROM clientes potenciale a WHERE a.clientes potencialePK.idclientes potenciale = :idclientes potenciale"),
-        @NamedQuery(name = "clientes potenciale.findByNombre", query = "SELECT a FROM clientes potenciale a WHERE a.nombre = :nombre"),
-        @NamedQuery(name = "clientes potenciale.findByApellido", query = "SELECT a FROM clientes potenciale a WHERE a.apellido = :apellido"),
-        @NamedQuery(name = "clientes potenciale.findByFmatricula", query = "SELECT a FROM clientes potenciale a , clientesvip v WHERE v.dni=a.dni and a.fmatricula = :fmatricula"),
-        @NamedQuery(name = "clientes potenciale.findañomodulo", query = "SELECT b, p FROM clientes potenciale b, Modulos p WHERE b.fmatricula =:fmatricula and p.nombre=:nombre   "),
-        @NamedQuery(name = "clientes potenciale.findByCicloFormativoId", query = "SELECT a FROM clientes potenciale a WHERE a.clientes potencialePK.cicloFormativoId = :cicloFormativoId"),
-        @NamedQuery(name = "ClientesPotenciale.findByNombreIsOrderByNombreAsc", query = "select c from ClientesPotenciale c where c.nombre = :nombre order by c.nombre")
+        @NamedQuery(name = "ClientesPotenciale.findBycorreo", query = "SELECT ClientesPotenciale.correo" +
+                "FROM ClientesPotenciale t1" +
+                "LEFT JOIN ClientesVip t2 ON t2.nombre = t1.nombre" +
+                "WHERE t2.nombre IS NULL")
 })
 
-
-
-
+@Entity
 
 
 

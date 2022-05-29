@@ -5,6 +5,9 @@ import javax.persistence.*;
 @Table(name = "`clientes vip`", indexes = {
         @Index(name = "fk_clientes vip_Operaciones1_idx", columnList = "Operaciones_idOperaciones")
 })
+@NamedQueries({
+        @NamedQuery(name = "ClientesVip.findByNombre", query = "select Nombre,Saldo FROM ClientesVip c where c.nombre=:nombreusr")
+})
 @Entity
 public class ClientesVip {
     @EmbeddedId

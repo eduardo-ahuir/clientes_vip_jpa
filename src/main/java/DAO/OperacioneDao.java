@@ -2,10 +2,9 @@ package DAO;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
+import entidades.*;
 import javax.persistence.*;
 import java.util.List;
-import entidades.Operacione;
 
 public class OperacioneDao {
     static Logger log = LogManager.getRootLogger();
@@ -36,6 +35,14 @@ public class OperacioneDao {
 
 
     }
-
+    //METODO PARA ENCONTRAR Los gestores a cargo de un cliente
+    public List<String> Econtrarmascantidad(int cantidad) {
+        EntityManager em = emfactory.createEntityManager();
+        Query query1 = em.createNamedQuery("Gestor.findbynombre", Gestor.class);
+        query1.setParameter("cantidad", cantidad); //indicamos el parametro para encontrar ese nombre
+        List<String> lista = (List<String>) query1.getResultList();
+        em.close();
+        return lista;
+    }
 
 }

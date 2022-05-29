@@ -2,14 +2,14 @@ package DAO;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import entidades.*;
 
 import javax.persistence.*;
 import java.util.List;
-import entidades.ClientesPotenciale;
 
 public class ClientesPotencialesDao {
     static Logger log = LogManager.getRootLogger();
-    static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("clientes_vippu");
+    static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("clientes_vip");
 
 
     //METODO PARA LISTAR TODOS LOS Clientes potenciales
@@ -37,11 +37,10 @@ public class ClientesPotencialesDao {
 
     }
 
-    //METODO DE PRUEBA PARA ENCONTRAR POR nombre (HAY QUE PASAR PARAMETRO STRING)
-    public List<String> econtrarpornombre(String nombre) {
+    //METODO PARA ENCONTRAR EL CORREO DE LOS CLIENTES POTENCIALES QUE NO SON VIP
+    public static List<String> encontrarcorreo() {
         EntityManager em = emfactory.createEntityManager();
-        Query query1 = em.createNamedQuery("clientes potenciale.findByNombre", ClientesPotenciale.class);
-        query1.setParameter("nombre", nombre); //indicamos el parametro para econtrar ese nombre
+        Query query1 = em.createNamedQuery("ClientesPotenciale.findBycorreo", ClientesPotenciale.class);
         List<String> lista = (List<String>) query1.getResultList();
         em.close();
         return lista;
